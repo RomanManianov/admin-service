@@ -2,3 +2,9 @@ server:
   port: 8082
   servlet:
     context-path: /admin-service
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/wc_hub?currentSchema=wc_hub
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver

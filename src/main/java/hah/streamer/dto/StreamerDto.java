@@ -1,6 +1,9 @@
 package hah.streamer.dto;
 
-public class Streamer {
+import lombok.Data;
+
+@Data
+public class StreamerDto {
     String code;
     String donate;
 }

@@ -1,18 +1,21 @@
 package hah.streamer.service.dao;
 
-import hah.streamer.dto.Streamer;
+import hah.streamer.dto.StreamerDto;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Repository
+@Service
 @RequiredArgsConstructor
 public class StreamersDaoAdapter {
 
     private final StreamersDao dao;
 
-    public List<Streamer> getAllStreamersByAdminId(long id) {
+    public List<StreamerDto> getAllStreamersByAdminId(long id) {
         return dao.getAllStreamersByAdminId(id);
+    }
+    public StreamerDto addNewStreamer(StreamerDto streamer) {
+        return dao.save(streamer);
     }
 }

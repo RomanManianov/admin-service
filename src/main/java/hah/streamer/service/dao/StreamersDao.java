@@ -1,16 +1,14 @@
 package hah.streamer.service.dao;
 
-import hah.streamer.dto.Streamer;
+import hah.streamer.dto.StreamerDto;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class StreamersDao {
+public interface StreamersDao extends CrudRepository<StreamerDto, Long> {
 
-    public List<Streamer> getAllStreamersByAdminId(long id) {
-        return new ArrayList<>();
-    }
+    public List<StreamerDto> getAllStreamersByAdminId(long id);
 }
 

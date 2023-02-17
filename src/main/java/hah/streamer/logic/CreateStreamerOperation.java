@@ -5,15 +5,12 @@ import hah.streamer.service.dao.StreamersDaoAdapter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
-@Service
 @RequiredArgsConstructor
-public class GetAllStreamersOperation {
-
+@Service
+public class CreateStreamerOperation {
     private final StreamersDaoAdapter streamersDaoAdapter;
 
-    public List<StreamerDto> getAllStreamersByAdminId(long id) {
-        return streamersDaoAdapter.getAllStreamersByAdminId(id);
+    public StreamerDto process(StreamerDto streamer) {
+        return streamersDaoAdapter.addNewStreamer(streamer);
     }
 }
