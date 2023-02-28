@@ -26,10 +26,11 @@ public class UserEntity {
     @Column(name = "last_donate")
     public String lastDonate;
 
-    public List<StreamerEntity> streamers;
-
-    @Column(name = "streamers_donate")
-    public Map<StreamerEntity, String> streamersDonate;
+    //todo: написать дтошки для связей
+//    public List<StreamerEntity> streamers;
+//
+//    @Column(name = "streamers_donate")
+//    public Map<StreamerEntity, String> streamersDonate;
 
     @Column(name = "created_at")
     public LocalDateTime createdAt;

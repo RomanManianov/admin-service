@@ -1,19 +1,30 @@
 package hah.streamer.entity;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.experimental.Accessors;
+
 import java.io.File;
 import java.time.LocalDateTime;
 
 @Entity
-@Data
-@Table(name = "streamer")
+@Getter
+@Setter
+@Table(name = "streamers")
+@Accessors(chain = true)
 public class StreamerEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
 
-    public String userName;
+    public String adminCode;
+
+    @Column(name = "username")
+    public String username;
+
+    public String role;
 
     public String code;
 
@@ -23,8 +34,8 @@ public class StreamerEntity {
 
     public File photo;
 
-    @Column(name = "reg_date")
-    public String regDate;
+    @Column(name = "registration_date")
+    public LocalDateTime regDate;
 
     public String inviter;
 
@@ -40,6 +51,6 @@ public class StreamerEntity {
     @Column(name = "updated_at")
     public LocalDateTime updatedAt;
 
-    @Column(name = "is_active")
+    @Column(name = "active")
     public boolean isActive;
 }
