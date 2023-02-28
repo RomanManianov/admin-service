@@ -1,6 +1,6 @@
 package hah.streamer.logic;
 
-import hah.streamer.dto.StreamerDto;
+import hah.streamer.entity.StreamerEntity;
 import hah.streamer.service.dao.StreamersDaoAdapter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,7 +13,7 @@ public class GetAllStreamersOperation {
 
     private final StreamersDaoAdapter streamersDaoAdapter;
 
-    public List<StreamerDto> getAllStreamersByAdminId(long id) {
-        return streamersDaoAdapter.getAllStreamersByAdminId(id);
+    public List<StreamerEntity> getAllStreamersByAdminCode(String adminCode) {
+        return streamersDaoAdapter.getAllStreamersByAdminCode(adminCode);
     }
 }

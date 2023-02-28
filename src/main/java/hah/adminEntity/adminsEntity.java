@@ -1,17 +1,21 @@
 package hah.adminEntity;
-import hah.streamer.Entity.StreamerEntity;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
-@Data
+@Getter
+@Setter
 @Table(name = "admins")
 public class adminsEntity {
 
+    @Id
     public Long id;
 
     @Column(name = "username")
@@ -19,7 +23,8 @@ public class adminsEntity {
 
     public String role;
 
-    public List<StreamerEntity> streamers;
+    //todo: написать дто для связей
+//    public List<StreamerEntity> streamers;
 
     @Column(name = "created_at")
     public LocalDateTime createdAt;
