@@ -8,6 +8,8 @@ public class TransferTokens {
 
     public void createTokenAccount() {
         String accountNumber = "";
+
+        //todo: вынести дубли в отдельный метод, переименовать пакет в tokens
         for (int j = 0; j < 10; j++) {
             Random r = new Random();
             String eng = "abcdefghijklmnopqrstuvwxyz";
@@ -24,6 +26,7 @@ public class TransferTokens {
     }
 
     public synchronized void transfer(String fromAccountNumber, String toAccountNumber, long amountTokens) {
+        //todo: упростить
         if (accountMap.get(fromAccountNumber).isBlocked() == true) {
             System.out.println("Error, token account: " + fromAccountNumber + "is blocked");
         }
@@ -40,6 +43,8 @@ public class TransferTokens {
                 && accountMap.get(toAccountNumber).isBlocked() == false)) {
             String transactionNum = "";
             Date date = new Date();
+
+            //todo: вынести дубли в отдельный метод, переименовать пакет в tokens
             for (int j = 0; j < 10; j++) {
                 Random r = new Random();
                 String eng = "abcdefghijklmnopqrstuvwxyz";
@@ -84,6 +89,8 @@ public class TransferTokens {
         }
     }
 
+    //todo: история бубет сохраняться в бд, метод getTransactionHistory нужно вынести в пакет dao
+    //            вообще он полностью нахуй не нужен, нам нужно получать историю транзакций по коду админа
     public synchronized String getTransactionHistory(String accountNum) {
         if(!accountMap.containsKey(accountNum)) {
             System.out.println("Eror, accountNum " + accountNum + " not found");

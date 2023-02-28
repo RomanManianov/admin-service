@@ -7,6 +7,7 @@ import java.util.Map;
 @AllArgsConstructor
 public class TokenAccount {
 
+    //todo: переделать согласно задаче, вынести сущность в пакет с сущностями
     private String numberAccount;
     private long amountTokens;
     private boolean isBlocked;
