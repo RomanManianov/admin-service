@@ -2,6 +2,9 @@ package hah.admin.controller;
 
 
 import hah.admin.controller.api.AdminControllerApi;
+import hah.admin.dto.AdminDto;
+import hah.admin.enitiy.AdminEntity;
+import hah.admin.logic.CreateAdminOperation;
 import hah.streamer.dto.StreamerDto;
 import hah.streamer.entity.StreamerEntity;
 import hah.streamer.logic.CreateStreamerOperation;
@@ -17,6 +20,7 @@ import java.util.List;
 public class AdminController implements AdminControllerApi {
     private final GetAllStreamersOperation getAllStreamersOperation;
     private final CreateStreamerOperation createStreamerOperation;
+    private final CreateAdminOperation createAdminOperation;
 
     @Override
     public ResponseEntity<List<StreamerEntity>> getAllStreamers(String adminCode) {
@@ -26,5 +30,10 @@ public class AdminController implements AdminControllerApi {
     @Override
     public ResponseEntity<StreamerEntity> createStreamer(StreamerDto streamerDto) {
         return ResponseEntity.ok(createStreamerOperation.process(streamerDto));
+    }
+
+    @Override
+    public ResponseEntity<AdminEntity> createAdmin(AdminDto adminDto) {
+        return ResponseEntity.ok(createAdminOperation.process(adminDto));
     }
 }

@@ -10,9 +10,9 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class StreamersDaoAdapter {
+public class StreamerDaoAdapter {
 
-    private final StreamersDao dao;
+    private final StreamerDao dao;
 
     public List<StreamerEntity> getAllStreamersByAdminCode(String adminCode) {
         return dao.getAllStreamersByAdminCode(adminCode);

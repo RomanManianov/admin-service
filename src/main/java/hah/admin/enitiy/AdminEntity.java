@@ -1,4 +1,4 @@
-package hah.adminEntity;
+package hah.admin.enitiy;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -6,14 +6,16 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.Accessors;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Getter
 @Setter
+@Accessors(chain = true)
 @Table(name = "admins")
-public class adminsEntity {
+public class AdminEntity {
 
     @Id
     public Long id;
@@ -22,6 +24,8 @@ public class adminsEntity {
     public String userName;
 
     public String role;
+
+    public String superAdminCode;
 
     //todo: написать дто для связей
 //    public List<StreamerEntity> streamers;
