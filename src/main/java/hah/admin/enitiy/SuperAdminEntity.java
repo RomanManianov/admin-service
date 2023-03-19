@@ -1,24 +1,23 @@
 package hah.admin.enitiy;
 
-import hah.streamer.entity.StreamerEntity;
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 @Entity
 @Getter
 @Setter
 @Accessors(chain = true)
-@Table(name = "admins")
-public class AdminEntity {
+@Table(name = "super_admin")
+public class SuperAdminEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     public Long id;
 
     @Column(name = "username")
@@ -26,12 +25,11 @@ public class AdminEntity {
 
     public String role;
 
-    public String code;
-
-    public String superAdminCode;
+    public String adminCode;
 
     //todo: написать дто и сущность для связей
-//    @ManyToMany
+//
+//    @OneToMany
 //    public List<StreamerEntity> streamers;
 
     @Column(name = "created_at")
@@ -40,6 +38,6 @@ public class AdminEntity {
     @Column(name = "updated_at")
     public LocalDateTime updatedAt;
 
-    @Column(name = "active")
+    @Column(name = "is_active")
     public boolean isActive;
 }

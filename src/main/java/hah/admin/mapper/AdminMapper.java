@@ -11,7 +11,9 @@ public class AdminMapper {
 
     public AdminEntity map(AdminDto adminDto) {
         return new AdminEntity()
-                .setUserName(adminDto.userName())
+                .setId(adminDto.getId())
+                .setUserName(adminDto.getUserName())
+                .setCode(adminDto.getCode())
                 .setRole(adminDto.getRole())
                 .setSuperAdminCode(adminDto.getSuperAdminCode())
                 .setCreatedAt(LocalDateTime.now())

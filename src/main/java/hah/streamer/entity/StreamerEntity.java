@@ -28,6 +28,8 @@ public class StreamerEntity {
 
     public String code;
 
+    public String superAdminCode;
+
     public String name;
 
     public Integer age;
