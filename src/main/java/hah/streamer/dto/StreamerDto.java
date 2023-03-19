@@ -13,6 +13,7 @@ public class StreamerDto {
     private String donate;
     private String role;
     private String adminCode;
+    private String superAdminCode;
     private String username;
     private String code;
     private String name;

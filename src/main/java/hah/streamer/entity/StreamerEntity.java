@@ -20,6 +20,7 @@ public class StreamerEntity {
     public Long id;
 
     public String adminCode;
+    public String superAdminCode;
 
     @Column(name = "username")
     public String username;
@@ -28,7 +29,6 @@ public class StreamerEntity {
 
     public String code;
 
-    public String superAdminCode;
 
     public String name;
 
