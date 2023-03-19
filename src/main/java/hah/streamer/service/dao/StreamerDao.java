@@ -9,6 +9,6 @@ import java.util.List;
 @Repository
 public interface StreamerDao extends CrudRepository<StreamerEntity, Long> {
 
-    public List<StreamerEntity> getAllStreamersByAdminCode(String adminCode);
+    List<StreamerEntity> getAllStreamersByAdminCode(String adminCode);
 }
 

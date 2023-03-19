@@ -25,6 +25,7 @@ public class StreamerDaoAdapter {
     private StreamerEntity mapEntityToDto(StreamerDto dto) {
         return new StreamerEntity()
                 .setCode(dto.getCode())
+                .setSuperAdminCode(dto.getSuperAdminCode())
                 .setUsername(dto.getUsername())
                 .setName(dto.getName())
                 .setRole(dto.getRole())
