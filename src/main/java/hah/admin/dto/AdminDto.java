@@ -12,15 +12,15 @@ import java.time.LocalDateTime;
 @Setter
 @Accessors(chain = true)
 @RequiredArgsConstructor
-public record AdminDto(
-        Long id,
-        String userName,
-        String role,
-        String superAdminCode,
-        LocalDateTime createdAt,
-        LocalDateTime updatedAt,
-        boolean isActive
-) {
+public class AdminDto {
+    private Long id;
+    private String userName;
+    private String code;
+    private String role;
+    private String superAdminCode;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+    private boolean isActive;
     //todo: написать дто для связей
 //    public List<StreamerEntity> streamers;
 }
