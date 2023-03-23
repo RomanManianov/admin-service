@@ -4,7 +4,7 @@ import hah.admin.dto.AdminDto;
 import hah.admin.enitiy.AdminEntity;
 import hah.admin.mapper.AdminMapper;
 import hah.common.dto.SuperAdminAdminLinkDto;
-import hah.common.mapper.SuperAdminAdminMapper;
+import hah.common.mapper.SuperAdminAdminLinkMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +15,7 @@ public class AdminDaoAdapter {
     private final AdminDao adminDao;
     private final AdminMapper mapper;
     private final AdminJDBC adminJDBC;
-    private final SuperAdminAdminMapper superAdminAdminMapper;
+    private final SuperAdminAdminLinkMapper superAdminAdminMapper;
 
     public AdminEntity addNewAdmin(AdminDto adminDto) {
         //todo: обработать исключение
