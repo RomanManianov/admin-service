@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import java.time.LocalDateTime;
 
 @Component
-public class SuperAdminAdminMapper {
+public class SuperAdminAdminLinkMapper {
 
     public SuperAdminAdminLinkDto map(AdminDto adminDto) {
         return new SuperAdminAdminLinkDto()

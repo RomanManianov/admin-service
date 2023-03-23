@@ -1,5 +1,7 @@
 package hah.streamer.service.dao;
 
+import hah.common.dto.AdminStreamerLinkDto;
+import hah.common.mapper.AdminStreamerLinkMapper;
 import hah.streamer.dto.StreamerDto;
 import hah.streamer.entity.StreamerEntity;
 import lombok.RequiredArgsConstructor;
@@ -13,13 +15,19 @@ import java.util.List;
 public class StreamerDaoAdapter {
 
     private final StreamerDao dao;
+    private final AdminStreamerLinkMapper adminStreamerLinkMapper;
+    private final StreamerJDBC streamerJDBC;
 
     public List<StreamerEntity> getAllStreamersByAdminCode(String adminCode) {
         return dao.getAllStreamersByAdminCode(adminCode);
     }
-    public StreamerEntity addNewStreamer(StreamerDto streamer) {
-        var streamerEntity = mapEntityToDto(streamer);
-        return dao.save(streamerEntity);
+    public StreamerEntity addNewStreamer(StreamerDto streamerDto) {
+        addAdminStreamerLink(adminStreamerLinkMapper.map(streamerDto));
+        return dao.save(mapEntityToDto(streamerDto));
+    }
+
+    private void addAdminStreamerLink(AdminStreamerLinkDto linkDto) {
+        streamerJDBC.addNewAdminStreamerLink(linkDto);
     }
 
     private StreamerEntity mapEntityToDto(StreamerDto dto) {
