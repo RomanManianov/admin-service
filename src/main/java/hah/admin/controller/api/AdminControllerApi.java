@@ -12,6 +12,9 @@ import java.util.List;
 @RequestMapping("/admin")
 public interface AdminControllerApi {
 
+    @GetMapping("/getStreamerByCode/{code}")
+    ResponseEntity<StreamerEntity> getStreamerByCode(@PathVariable("code") String streamerCode);
+
     @GetMapping("/getAllStreamers/{code}")
     ResponseEntity<List<StreamerEntity>> getAllStreamers(@PathVariable("code") String adminCode);
 

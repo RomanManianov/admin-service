@@ -1,7 +1,7 @@
 package hah.admin.service.dao;
 
 import hah.admin.dto.AdminDto;
-import hah.common.dto.SuperAdminAdminDto;
+import hah.common.dto.SuperAdminAdminLinkDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
@@ -18,11 +18,11 @@ public class AdminJDBC {
         return null;
     }
 
-    public void addNewSuperAdminAdminLink(SuperAdminAdminDto dto) {
+    public void addNewSuperAdminAdminLink(SuperAdminAdminLinkDto dto) {
         jdbcTemplate.execute(addNewSuperAdminAdminLinkScript(dto));
     }
 
-    private String addNewSuperAdminAdminLinkScript(SuperAdminAdminDto dto) {
+    private String addNewSuperAdminAdminLinkScript(SuperAdminAdminLinkDto dto) {
         return """
                 insert into wc_hub.super_admins_admins
                 (super_admin_code, admin_code, created_at, active)

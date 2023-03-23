@@ -3,7 +3,7 @@ package hah.admin.service.dao;
 import hah.admin.dto.AdminDto;
 import hah.admin.enitiy.AdminEntity;
 import hah.admin.mapper.AdminMapper;
-import hah.common.dto.SuperAdminAdminDto;
+import hah.common.dto.SuperAdminAdminLinkDto;
 import hah.common.mapper.SuperAdminAdminMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -23,7 +23,7 @@ public class AdminDaoAdapter {
         return adminDao.save(mapper.map(adminDto));
     }
 
-    private void addSuperAdminAdminLink(SuperAdminAdminDto dto) {
+    private void addSuperAdminAdminLink(SuperAdminAdminLinkDto dto) {
         adminJDBC.addNewSuperAdminAdminLink(dto);
     }
 }

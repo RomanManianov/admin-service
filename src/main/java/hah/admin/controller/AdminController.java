@@ -23,6 +23,11 @@ public class AdminController implements AdminControllerApi {
     private final CreateAdminOperation createAdminOperation;
 
     @Override
+    public ResponseEntity<StreamerEntity> getStreamerByCode(String streamerCode) {
+        return null;
+    }
+
+    @Override
     public ResponseEntity<List<StreamerEntity>> getAllStreamers(String adminCode) {
         return ResponseEntity.ok(getAllStreamersOperation.getAllStreamersByAdminCode(adminCode));
     }
